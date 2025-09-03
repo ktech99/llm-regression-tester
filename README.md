@@ -294,19 +294,6 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Built with modern Python packaging standards
-- Inspired by the need for standardized LLM evaluation
-- Thanks to all contributors and the open-source community
-
-## 📞 Support
-
-- 📧 [Issues](https://github.com/ktech99/llm-regression-tester/issues)
-- 📚 [Documentation](https://llm-regression-tester.readthedocs.io/)
-- 💬 [Discussions](https://github.com/ktech99/llm-regression-tester/discussions)
-
 ---
 
 **Happy Testing!** 🎉

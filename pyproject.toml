@@ -10,15 +10,16 @@ readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.8"
 authors = [
-    {name = "LLM Regression Tester Contributors"}
+    {name = "Kartik Arora", email = "kartikarora99@gmail.com"}
 ]
 maintainers = [
-    {name = "LLM Regression Tester Contributors"}
+    {name = "Kartik Arora", email = "kartikarora99@gmail.com"}
 ]
 keywords = ["llm", "testing", "evaluation", "rubrics", "ai", "nlp"]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
@@ -27,8 +28,12 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: Implementation :: CPython",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
     "Topic :: Software Development :: Testing",
+    "Topic :: Software Development :: Quality Assurance",
+    "Typing :: Typed",
 ]
 dependencies = [
     "typing-extensions>=4.0.0",
