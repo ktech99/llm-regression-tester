@@ -1,0 +1,68 @@
+[
+  {
+    "name": "customer_support_response",
+    "min_score_to_pass": 7,
+    "guidelines": [
+      {
+        "id": "polite",
+        "description": "Response is polite and professional",
+        "correct_score": 3,
+        "incorrect_score": 0
+      },
+      {
+        "id": "accurate",
+        "description": "Response provides accurate information",
+        "correct_score": 2,
+        "incorrect_score": 0
+      },
+      {
+        "id": "helpful",
+        "description": "Response offers specific help or next steps",
+        "correct_score": 2,
+        "incorrect_score": 0
+      },
+      {
+        "id": "complete",
+        "description": "Response addresses all aspects of the query",
+        "correct_score": 2,
+        "incorrect_score": 0
+      },
+      {
+        "id": "concise",
+        "description": "Response is clear and not unnecessarily verbose",
+        "correct_score": 1,
+        "incorrect_score": 0
+      }
+    ]
+  },
+  {
+    "name": "code_review",
+    "min_score_to_pass": 6,
+    "guidelines": [
+      {
+        "id": "functionality",
+        "description": "Code maintains intended functionality",
+        "correct_score": 2,
+        "incorrect_score": 0
+      },
+      {
+        "id": "readability",
+        "description": "Code is readable and well-documented",
+        "correct_score": 2,
+        "incorrect_score": 0
+      },
+      {
+        "id": "efficiency",
+        "description": "Code is efficient and optimized",
+        "correct_score": 2,
+        "incorrect_score": 0
+      },
+      {
+        "id": "best_practices",
+        "description": "Code follows language best practices",
+        "correct_score": 2,
+        "incorrect_score": 0
+      }
+    ]
+  }
+]
