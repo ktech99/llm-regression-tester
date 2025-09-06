@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "llm-regression-tester"
-version = "0.1.0"
+version = "0.1.2"
 description = "A flexible library for testing LLM responses against predefined rubrics using OpenAI's API for automated scoring"
 readme = "README.md"
 license = {text = "MIT"}

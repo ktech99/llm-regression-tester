@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Setup script for LLM Regression Tester.
+Setup script for LLM Regression rubric.
 """
 
 from setuptools import setup, find_packages
@@ -10,8 +10,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="llm-regression-tester",
-    version="0.1.0",
+    name="llm-regression-rubric",
+    version="0.1.1",
     author="LLM Regression Tester Contributors",
     description="A flexible library for testing LLM responses against predefined rubrics using OpenAI's API for automated scoring",
     long_description=long_description,
