@@ -16,6 +16,54 @@ Traditional LLM-as-a-judge approaches lacked sophisticated scoring mechanisms - 
 - **Flexible Rubrics**: Define custom evaluation criteria that reflect real-world grading standards
 - **Accurate Assessment**: More precise scoring that mirrors human evaluation processes
 
+## 💡 LLM Example with Table Rubric & Scoring
+
+Here's a practical example of how the library evaluates an LLM response using a weighted rubric system:
+
+### Sample LLM Response to Evaluate
+> *"Thank you for your question about our billing system. Your last payment of $29.99 was processed successfully on March 10th. If you need to make any changes to your payment method, please visit our website."*
+
+*(Note: This response has the wrong date - should be March 20th, causing it to fail accuracy)*
+
+### Customer Support Rubric Table (with Negative Marking)
+
+| Criterion | Description | Points | Status | Score |
+|-----------|-------------|--------|--------|-------|
+| **Politeness** | Uses courteous language (please, thank you), maintains professional tone, no slang or inappropriate language | 3 | ✅ | 3/3 |
+| **Accuracy** | Payment date is March 20th, amount is $29.99, status shows payment processed successfully | 2 | ❌ | -5/2 |
+| **Helpfulness** | Provides actionable next steps with specific instructions, links, or contact methods beyond generic advice | 2 | ❌ | 0/2 |
+| **Completeness** | Addresses all parts of customer query: billing amount, payment date, current status, and future options | 2 | ✅ | 2/2 |
+| **Conciseness** | Information is relevant and focused, under 50 words, avoids unnecessary details or repetition | 1 | ✅ | 1/1 |
+| **TOTAL SCORE** | Minimum to pass: **7/10** | **10** | ❌ **FAIL** | **1/10** |
+
+### Automated LLM Evaluation Process
+
+The library uses OpenAI's GPT-4o-mini to evaluate the response against each criterion:
+
+```python
+from llm_regression_tester import LLMRegressionTester
+
+tester = LLMRegressionTester("rubrics.json")
+result = tester.test_response("customer_support_response", response_text)
+
+print(f"Final Score: {result['total_score']}/10")
+print(f"Pass Status: {'PASS' if result['pass_status'] else 'FAIL'}")
+
+# Output: Final Score: 1/10, Pass Status: FAIL
+```
+
+### Scoring Breakdown Details
+
+The LLM evaluator provides detailed reasoning for each criterion:
+
+- **Politeness (3/3)**: *"Uses courteous language ('Thank you'), maintains professional tone, no slang or inappropriate language."*
+- **Accuracy (-5/2)**: *"❌ **NEGATIVE MARKING**: Payment amount ($29.99) is correct and status is correct, but date is wrong (March 10th instead of March 20th). Payment date must be March 20th, amount must be $29.99, status must show payment processed successfully."*
+- **Helpfulness (0/2)**: *"Provides only generic advice ('visit our website') without specific instructions, links, or actionable contact methods."*
+- **Completeness (2/2)**: *"Addresses billing amount ($29.99), payment date (incorrect), current status (processed), and mentions future options."*
+- **Conciseness (1/1)**: *"Response is 28 words, relevant and focused, avoids unnecessary details or repetition."*
+
+This example demonstrates the **negative marking** feature: even though the response was polite, complete, and concise, the single factual error (wrong date) caused a penalty that dropped the score below the passing threshold. This weighted scoring system with negative marking provides much more nuanced evaluation than simple binary pass/fail judgments, enabling precise quality assessment that mirrors human grading standards.
+
 ## 🚀 Features
 
 - **OpenAI Integration**: Seamless integration with OpenAI's API
@@ -62,19 +110,19 @@ Create a JSON file defining your evaluation criteria:
     "guidelines": [
       {
         "id": "polite",
-        "description": "Response is polite and professional",
+        "description": "Uses courteous language (please, thank you), maintains professional tone, no slang or inappropriate language",
         "correct_score": 3,
         "incorrect_score": 0
       },
       {
         "id": "accurate",
-        "description": "Response provides accurate information",
+        "description": "Payment date is March 20th, amount is $29.99, status shows payment processed successfully",
         "correct_score": 2,
-        "incorrect_score": 0
+        "incorrect_score": -5
       },
       {
         "id": "helpful",
-        "description": "Response offers specific help or next steps",
+        "description": "Provides actionable next steps with specific instructions, links, or contact methods beyond generic advice",
         "correct_score": 2,
         "incorrect_score": 0
       }

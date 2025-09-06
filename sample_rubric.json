@@ -5,31 +5,31 @@
     "guidelines": [
       {
         "id": "polite",
-        "description": "Response is polite and professional",
+        "description": "Uses courteous language (please, thank you), maintains professional tone, no slang or inappropriate language",
         "correct_score": 3,
         "incorrect_score": 0
       },
       {
         "id": "accurate",
-        "description": "Response provides accurate information",
+        "description": "Payment date is March 20th, amount is $29.99, status shows payment processed successfully",
         "correct_score": 2,
-        "incorrect_score": 0
+        "incorrect_score": -5
       },
       {
         "id": "helpful",
-        "description": "Response offers specific help or next steps",
+        "description": "Provides actionable next steps with specific instructions, links, or contact methods beyond generic advice",
         "correct_score": 2,
         "incorrect_score": 0
       },
       {
         "id": "complete",
-        "description": "Response addresses all aspects of the query",
+        "description": "Addresses all parts of customer query: billing amount, payment date, current status, and future options",
         "correct_score": 2,
         "incorrect_score": 0
       },
       {
         "id": "concise",
-        "description": "Response is clear and not unnecessarily verbose",
+        "description": "Information is relevant and focused, under 50 words, avoids unnecessary details or repetition",
         "correct_score": 1,
         "incorrect_score": 0
       }
