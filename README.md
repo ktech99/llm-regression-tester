@@ -27,14 +27,14 @@ Here's a practical example of how the library evaluates an LLM response using a 
 
 ### Customer Support Rubric Table (with Negative Marking)
 
-| Criterion | Description | Points | Status | Score |
-|-----------|-------------|--------|--------|-------|
-| **Politeness** | Uses courteous language (please, thank you), maintains professional tone, no slang or inappropriate language | 3 | ✅ | 3/3 |
-| **Accuracy** | Payment date is March 20th, amount is $29.99, status shows payment processed successfully | 2 | ❌ | -5/2 |
-| **Helpfulness** | Provides actionable next steps with specific instructions, links, or contact methods beyond generic advice | 2 | ❌ | 0/2 |
-| **Completeness** | Addresses all parts of customer query: billing amount, payment date, current status, and future options | 2 | ✅ | 2/2 |
-| **Conciseness** | Information is relevant and focused, under 50 words, avoids unnecessary details or repetition | 1 | ✅ | 1/1 |
-| **TOTAL SCORE** | Minimum to pass: **7/10** | **10** | ❌ **FAIL** | **1/10** |
+| Criterion | Description | Correct | Incorrect | Status | Score |
+|-----------|-------------|---------|-----------|--------|-------|
+| **Politeness** | Uses courteous language (please, thank you), maintains professional tone, no slang or inappropriate language | 3 | 0 | ✅ | 3/3 |
+| **Accuracy** | Payment date is March 20th, amount is $29.99, status shows payment processed successfully | 2 | -5 | ❌ | -5/2 |
+| **Helpfulness** | Provides actionable next steps with specific instructions, links, or contact methods beyond generic advice | 2 | 0 | ❌ | 0/2 |
+| **Completeness** | Addresses all parts of customer query: billing amount, payment date, current status, and future options | 2 | 0 | ✅ | 2/2 |
+| **Conciseness** | Information is relevant and focused, under 50 words, avoids unnecessary details or repetition | 1 | 0 | ✅ | 1/1 |
+| **TOTAL SCORE** | Minimum to pass: **7/10** | **10** | **-** | ❌ **FAIL** | **1/10** |
 
 ### Automated LLM Evaluation Process
 
