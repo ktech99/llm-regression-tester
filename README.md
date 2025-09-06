@@ -6,6 +6,16 @@
 
 A Python library for testing LLM responses against predefined rubrics using OpenAI's API for automated scoring. Features easy assert methods for clean, readable tests. Simple, focused, and powerful.
 
+## 🤔 Why This Library?
+
+Traditional LLM-as-a-judge approaches lacked sophisticated scoring mechanisms - they couldn't properly weight different issues or apply negative marking, making accurate grading challenging. This library solves that problem by implementing a **college-style rubric system with negative marking**, enabling precise and nuanced evaluation of LLM responses.
+
+**Key Innovation:**
+- **Weighted Scoring**: Different rubric criteria can have different point values based on importance
+- **Negative Marking**: Incorrect or missing elements can deduct points, not just give zero
+- **Flexible Rubrics**: Define custom evaluation criteria that reflect real-world grading standards
+- **Accurate Assessment**: More precise scoring that mirrors human evaluation processes
+
 ## 🚀 Features
 
 - **OpenAI Integration**: Seamless integration with OpenAI's API
